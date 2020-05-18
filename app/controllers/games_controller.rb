@@ -24,7 +24,7 @@ class GamesController < ApplicationController
   private
 
   def point_calculation(answer, time_answer)
-    time_answer > 100 ? 0 : 1
+    time_answer > 100 ? 0 : answer.length * (1.0 - time_answer / 60.0)
   end
 
   def included?(answer, letters)
